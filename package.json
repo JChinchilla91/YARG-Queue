@@ -1,0 +1,26 @@
+{
+  "name": "yarg-party-queue",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local FIFO song request queue for YARG with LAN web UI and desktop overlay",
+  "workspaces": [
+    "server",
+    "client",
+    "overlay"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:all": "concurrently -n server,client,overlay -c blue,green,magenta \"npm run dev -w server\" \"npm run dev -w client\" \"npm run dev -w overlay\"",
+    "build": "npm run build -w client && npm run build -w overlay",
+    "start": "npm run start -w server",
+    "index-songs": "npm run index-songs -w server",
+    "open-firewall": "powershell -ExecutionPolicy Bypass -File scripts/open-firewall.ps1",
+    "lint": "npm run lint -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}
