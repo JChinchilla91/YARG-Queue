@@ -68,11 +68,11 @@ export function addRequest({ songId, requestedBy }) {
   }
 
   const active = countActiveByUser.get(requestedBy);
-  if (active.count > 0) {
-    const err = new Error('You already have a song in the queue');
-    err.status = 409;
-    throw err;
-  }
+  // if (active.count > 0) {
+  //   const err = new Error('You already have a song in the queue');
+  //   err.status = 409;
+  //   throw err;
+  // }
 
   const result = db
     .prepare(`

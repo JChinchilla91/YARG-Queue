@@ -53,7 +53,6 @@ export function AppLayout() {
       </Container>
       <Box component="footer" sx={{ py: 2, textAlign: 'center', opacity: 0.6 }}>
         <Typography variant="caption">
-          FIFO queue for local YARG sessions —{' '}
           <Link component={RouterLink} to="/join" underline="hover">
             change name
           </Link>
